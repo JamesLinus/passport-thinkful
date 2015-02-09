@@ -27,6 +27,7 @@
     "mocha": "^2.1.0"
   },
   "dependencies": {
-    "passport-strategy": "^1.0.0"
+    "jsonwebtoken": "^3.2.2",
+    "passport-http-bearer": "^1.0.1"
   }
 }
