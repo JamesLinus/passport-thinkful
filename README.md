@@ -15,15 +15,15 @@ This module authenticates requests intended for Thinkful services. It wraps [htt
 
 ```javascript
 passport.use(new ThinkfulStrategy(
-	{ secret: publicPrivateSigningKey },
-	function (req, user, done) {
-  	request.get(USER_API_ENDPOINT)
-    	.set('Authorization', req.headers.authorization)
-    	.end(function (err, res) {
+  { secret: publicPrivateSigningKey },
+  function (req, user, done) {
+    request.get(USER_API_ENDPOINT)
+      .set('Authorization', req.headers.authorization)
+      .end(function (err, res) {
         if (err) { return done(err); }
         if (!res.body || !res.body.user) { return done(null, false); }
         return done(null, res.body.user);
-  		});
+      });
   }
 ));
 ```
